@@ -19,5 +19,11 @@ app.get("/", function(req, res) {
   res.render("homepage.mustache", DATA);
 });
 
+app.get('/:id', function(req, res) {
+  let foundRobot = DATA.users.find(function(user){
+    return user.id == req.params.id;
+  });
+  res.render('user', { users: [foundRobot]});
+})
 
 app.listen(3000);
