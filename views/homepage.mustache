@@ -11,8 +11,13 @@
       <section class = "employees"
         <a><img src="{{avatar}}"></a>
         <h3>{{name}}</h3>
-        <p>{{job}}
-        {{company}}</p>
+        {{#job}}
+          <p>{{job}}
+          {{company}}</p>
+        {{/job}}
+        {{^job}}
+          <p class="unemployed">Available for Hire</p>
+        {{/job}}
       </section>
       {{/users}}
     </section>
